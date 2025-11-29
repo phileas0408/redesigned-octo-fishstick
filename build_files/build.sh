@@ -12,6 +12,7 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 config-manager setopt brave-browser.enabled=1
 dnf5 config-manager setopt vscode.enabled=1
+dnf5 config-manager setopt rpmfusion-nonfree.enabled=1
 
 dnf5 install -y \
     discord \
@@ -20,6 +21,7 @@ dnf5 install -y \
 
 dnf5 config-manager setopt brave-browser.enabled=0
 dnf5 config-manager setopt vscode.enabled=0
+dnf5 config-manager setopt rpmfusion-nonfree.enabled=0
 
 # Use a COPR Example:
 #
