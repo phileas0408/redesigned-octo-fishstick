@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c26d", RUN+="/usr/sbin/usb_modeswitch -v 046d -p c26d -m 01 -r 81 -C 0x03 -M 0f00010142"
