@@ -10,7 +10,16 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux 
+dnf5 config-manager setopt brave-browser.enabled=1
+dnf5 config-manager setopt vscode.enabled=1
+
+dnf5 install -y \
+    discord \
+    brave-browser \
+    code
+
+dnf5 config-manager setopt brave-browser.enabled=0
+dnf5 config-manager setopt vscode.enabled=0
 
 # Use a COPR Example:
 #
