@@ -9,23 +9,25 @@ dnf5 -y install \
     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && \
         
 # Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
+# RPMfusion repos are available by default in ublue main images // LOL NOT ANYMORE 
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
 dnf5 config-manager setopt brave-browser.enabled=1
 dnf5 config-manager setopt vscode.enabled=1
-dnf5 config-manager setopt rpmfusion-nonfree.enabled=1
 
 dnf5 install -y \
-    discord \
     brave-browser \
     code
 
+
+
 dnf5 config-manager setopt brave-browser.enabled=0
 dnf5 config-manager setopt vscode.enabled=0
-dnf5 config-manager setopt rpmfusion-nonfree.enabled=0
+
+# install discord from official package
+dnf5 install -y "https://discord.com/api/download?platform=linux&format=rpm"
 
 # Use a COPR Example:
 #
