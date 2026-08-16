@@ -29,10 +29,8 @@ dnf5 config-manager setopt vscode.enabled=0
 # install discord from official package
 dnf5 install -y "https://discord.com/api/download?platform=linux&format=rpm"
 
-# install unity hub latest
+# install unity hub latest /system_files/etc/yum.repos.d/unityhub.repo
 # https://docs.unity.com/en-us/hub/install-hub-linux#install-the-hub-on-red-hat-enterprise-linux-(rhel)-centos-or-fedora
-sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com/linux/repos/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://hub.unity3d.com/linux/repos/rpm/stable/repodata/repomd.xml.key\nrepo_gpgcheck=1" > /etc/yum.repos.d/unityhub.repo'
-dnf check-update
 dnf install -y unityhub
 
 # Use a COPR Example:
